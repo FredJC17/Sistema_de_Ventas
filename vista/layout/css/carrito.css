@@ -1,0 +1,230 @@
+.container {
+            width: 350px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #212121;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #00e5ff;
+        }
+
+        .demo-content {
+            color: white;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .product-card {
+            background-color: #2a2a2a;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #00e5ff;
+        }
+
+        .product-card h3 {
+            color: #00e5ff;
+            margin: 0 0 10px 0;
+        }
+
+        .product-card p {
+            color: white;
+            margin: 5px 0;
+        }
+
+        .floating-cart-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 70px;
+            height: 70px;
+            background-color: #00e5ff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .floating-cart-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            background-color: #0099cc;
+        }
+
+        .floating-cart-btn:active {
+            transform: translateY(-2px) scale(1.05);
+            transition: all 0.1s ease;
+        }
+
+        .cart-icon {
+            width: 32px;
+            height: 32px;
+            fill: #222;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .floating-cart-btn:hover .cart-icon {
+            fill: white;
+            transform: scale(1.2);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: bold;
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.6),
+                        0 0 0 2px rgba(220, 53, 69, 0.3);
+            animation: pulse-badge 2s infinite;
+            z-index: 3;
+        }
+
+        @keyframes pulse-badge {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 2px 8px rgba(220, 53, 69, 0.4);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 4px 12px rgba(220, 53, 69, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 2px 8px rgba(220, 53, 69, 0.4);
+            }
+        }
+
+        .floating-cart-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .floating-cart-btn.clicked::after {
+            width: 120px;
+            height: 120px;
+        }
+
+        .cart-tooltip {
+            position: absolute;
+            bottom: 85px;
+            left: -10px;
+            background-color: #212121;
+            color: #00e5ff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(0, 229, 255, 0.5);
+        }
+
+        .cart-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 25px;
+            border: 8px solid transparent;
+            border-top-color: #212121;
+        }
+
+        .floating-cart-btn:hover .cart-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .floating-cart-btn {
+                width: 65px;
+                height: 65px;
+                bottom: 25px;
+                left: 25px;
+            }
+
+            .cart-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            .cart-badge {
+                width: 26px;
+                height: 26px;
+                font-size: 12px;
+                top: -6px;
+                left: -6px;
+            }
+
+            .cart-tooltip {
+                font-size: 13px;
+                padding: 8px 12px;
+                bottom: 75px;
+                left: -5px;
+            }
+        }
+
+        .floating-cart-btn.fade-in {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .floating-cart-btn.loading {
+            animation: spin 1s linear infinite;
+        }
+
+        .floating-cart-btn.success {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }

@@ -1,0 +1,145 @@
+.navbar {
+    background-color: #212121;
+    padding: 25px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar-logo {
+    font-size: 28px;
+    color: #00e5ff;
+    font-weight: bold;
+    margin-right: 40px;
+    letter-spacing: 2px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.navbar-menu > li {
+    position: relative;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s;
+    padding: 12px 18px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.navbar-menu a:hover {
+    background-color: #003366;
+    color: #00e5ff;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2c2c2c;
+    min-width: 180px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    z-index: 20;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #003366;
+    color: #00e5ff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 10px;
+    }
+    .navbar-logo {
+        margin-bottom: 10px;
+    }
+    .navbar-menu {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    .navbar-menu > li {
+        margin-left: 0;
+    }
+    .navbar-menu a {
+        width: 100%;
+        text-align: left;
+        padding: 12px 10px;
+    }
+    .dropdown-menu {
+        position: static;
+        min-width: 100%;
+        box-shadow: none;
+    }
+}
+
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #00e5ff;
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+@media (max-width: 700px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 6px;
+    }
+    .navbar-menu.active {
+        display: flex;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+}

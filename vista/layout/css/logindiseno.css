@@ -1,0 +1,83 @@
+
+        body {font-family: 'Arial', sans-serif;margin: 0;  padding: 0;background-color: #969696;color: #333;}
+        .header {background-color: #212121; color: white; padding: 35px;text-align: center; font-size: 40px;font-weight: bold;}
+        .container {
+            width: 350px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #212121;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h2 {
+            color: #00e5ff;
+        }
+        label{
+            color:white;align-content: center;
+        }
+        input {
+            width: 90%;padding: 10px;margin: 10px 0;border: 1px solid #ccc;border-radius: 5px;font-size: 16px;
+        }
+        .boton-editar {
+    padding: 6px 18px;
+    background-color: #00e5ff;
+    color: #222;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    font-size: 16px;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    display: inline-block;
+}
+.boton-editar:hover {
+    background-color: #003366;
+    color: #fff;
+}
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #01070d;
+        }
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+.boton-eliminar {
+    padding: 8px 18px;
+    background-color: #e53935;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.boton-eliminar:hover {
+    background-color: #b71c1c;
+}
